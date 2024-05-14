@@ -28,7 +28,8 @@ int main(char argc, char** argv)
 
 	while (1)
 	{
-		Sleep(1000);
+		//Sleep(1000);
+		Sleep(100);
 		if (Port.state & (some_flags_lastBit << 1))
 			Port.state = 0;
 		Port.state++;
@@ -40,18 +41,18 @@ int main(char argc, char** argv)
 				((Port.state & STATE_SENDING) == 0)) {
 				printf("Do BIG DEALS 1!\n");
 				checkValForStyle1 += 3;
-			}//But if there no another condition! <- NOTE.1
+			}/*you can comment this line//*/else { checkValForStyle1++; }//But if there no another condition! <- |NOTE.1|
 		}else{
-			//checkValForStyle1++;
+			checkValForStyle1++;
 		}
 
 		//But what if we write checking flags conditions this type which does the same on above:
 		if ((Port.state & (STATE_ENABLE | STATE_IN_TRANSFERING | STATE_BUSY | STATE_SENDING)) == ONLY STATE_ENABLE) {
 			printf("Do BIG DEALS 2!\n");
 			checkValForStyle2 += 3;
-		}//compact & butyied but look at NOTE.1 on above!
+		}//compact & butyied and it's the same code but look at |NOTE.1| on above!
 		else{
-			//checkValForStyle2++;
+			/*you can comment this line//*/checkValForStyle2++;
 		}
 
 		checkPortsStates(&Port);
@@ -63,5 +64,5 @@ int main(char argc, char** argv)
 
 static void checkPortsStates(somePort_t* Port)
 {
-	printf("Ports state: %d %d %d %d\n", ((Port->state & STATE_IN_TRANSFERING) > 0), ((Port->state & STATE_BUSY) > 0), ((Port->state & STATE_SENDING) > 0), ((Port->state & STATE_ENABLE) > 0));
+	printf("Ports state: %d %d %d %d\n", ((Port->state & STATE_SENDING) > 0), ((Port->state & STATE_BUSY) > 0), ((Port->state & STATE_IN_TRANSFERING) > 0), ((Port->state & STATE_ENABLE) > 0));
 }
