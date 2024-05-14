@@ -41,7 +41,7 @@ int main(char argc, char** argv)
 				((Port.state & STATE_SENDING) == 0)) {
 				printf("Do BIG DEALS 1!\n");
 				checkValForStyle1 += 3;
-			}/*you can comment this line//*/else { checkValForStyle1++; }//But if there no another condition! <- |NOTE.1|
+			}/*you can comment this line//*/else { checkValForStyle1++; }//But if there no another else condition! <- |NOTE.1|
 		}else{
 			checkValForStyle1++;
 		}
