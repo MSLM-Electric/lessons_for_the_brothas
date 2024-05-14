@@ -95,16 +95,16 @@ Can_ConfigType Can =
 			}
 		},
 
-        .CanHardwareObject =
+		.CanHardwareObject =
 		{
 			{
-                .CanTriggerTransmitEnable = false,
+				.CanTriggerTransmitEnable = false,
 				.CanHandleType = FULL,
-                .CanObjectType = TRANSMIT,
+				.CanObjectType = TRANSMIT,
 				.CanControllerRef = &Can.CanConfigSet.CanController[0],
-                .CanIdType = STANDARD,
+				.CanIdType = STANDARD,
 				.CanObjectId = 0U,
-                .CanHwObjectCount = 1U
+				.CanHwObjectCount = 1U
 				// We don't need to set CanHwFilter as it is a transmit HOH
             },
 
@@ -113,14 +113,14 @@ Can_ConfigType Can =
 				.CanHwFilter =
 				{
 					.CanHwFilterMask = 0x0U,
-                    .CanHwFilterCode = 0x0U,
+					.CanHwFilterCode = 0x0U,
 				},
-                .CanHandleType = FULL,
+				.CanHandleType = FULL,
 				.CanObjectType = RECEIVE,
-                .CanControllerRef = &Can.CanConfigSet.CanController[0],
-                .CanIdType = STANDARD,
+				.CanControllerRef = &Can.CanConfigSet.CanController[0],
+				.CanIdType = STANDARD,
 				.CanObjectId = 1U,
-                .CanHwObjectCount = 1U
+				.CanHwObjectCount = 1U
 			}
 		}
 	}
