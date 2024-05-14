@@ -106,9 +106,9 @@ Can_ConfigType Can =
 				.CanObjectId = 0U,
 				.CanHwObjectCount = 1U
 				// We don't need to set CanHwFilter as it is a transmit HOH
-            },
+			},
 
-            {
+			{
 				.CanTriggerTransmitEnable = false,
 				.CanHwFilter =
 				{
